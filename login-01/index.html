@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        body{
+            background-image: url("./background.png"),linear-gradient(#634edd,#634edd) ;
+            background-size: auto 80vh,auto;
+            background-position: 101vw 25vh,0vw 0vh;
+            background-repeat: repeat-x;
+            height: 100vh;
+            animation: moveBackground 100s infinite;
+        }
+
+        .box{
+            background: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 350px;
+            max-width: 100%;
+            min-height: 350px;
+            filter: drop-shadow(0px 8px 1px #e8e8ea);
+            border-radius: 19px;
+        }
+
+        form{
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        form input{
+            display: inline-block;
+            width: 80%;
+            margin: 4% 0%;
+            height: 50px;
+            padding-left: 0.5rem;
+            font-size: 25px;
+            color: #000;
+            border: none;
+            background: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0px 3px 2px  #e7e8e9 ;
+        }
+        form input::placeholder{
+            color: #000;  
+            text-transform: uppercase;
+        }
+        form input[type=submit]{
+            padding-left: 0rem;
+            display: block;
+            float: right;
+            width: 40%;
+            margin: 7% 8%;
+            height: 60px;
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0px 3px 2px #44b95b;
+            background: #50d86a;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 500;
+            
+        }
+
+        .pass-recovery{
+            position: absolute;
+            top: 67%;
+            left: 9%;
+        }
+        a {
+            color: #998ce9;
+            text-decoration:  none;
+            font-size:14px;
+       
+        }
+
+        @keyframes moveBackground {
+            0%{
+                background-position: 0vw 25vh,0vw 0vh; 
+            }  
+            
+            100%{
+                background-position: -1000vw 25vh,0vw 0vh; 
+            }
+        }
+    </style>
+</head>
+<body>  
+       
+        <div class="box">
+            <span class="pass-recovery">
+                <a href=""> forget password ?</a>
+            </span>
+            <form action="">
+                <input type="text" placeholder="username">
+                <input type="password" placeholder="password">
+                <input type="submit" value="log in">
+            </form>
+        </div>
+
+</body>
+</html>
