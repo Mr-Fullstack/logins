@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login 02 beautiful</title>
+
+    <style>
+        body{
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+
+        #mainView{
+            overflow: hidden;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            position: relative;
+        }
+        section{
+            height: 100%;
+            scroll-snap-align: center;
+            position: relative;
+        }
+
+        section.signup{
+            top: -80vh;
+            height: 79vh;
+            background: #7EFD93;
+            z-index: 999;
+            position: sticky;
+           
+        }
+
+        section.signup:after{
+            content: "";
+            display: block;
+            width: 50%;
+            height: 28px;
+            position: absolute;
+            bottom: -28px;
+            left: 50%;
+            background: #7EFD93;
+            border-radius: 0px 0px 25px 25px;
+            transform: translateX(-50%);
+        }
+
+
+        section.signup:before{
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            bottom: -18px;
+            border: 2px solid;
+            border-left: 2px solid transparent;
+            border-top: 2px solid transparent;
+            left: 47%;
+            transform: rotate(45deg);
+            z-index: 99;
+        }
+
+        .box{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width: 450px;
+            max-width: 100%;
+        }
+
+        form{
+            text-align: center;
+            padding-top: 20%;
+        }
+
+        form input{
+            background: #7EFD93;
+            border: none;
+            display: inline-block;
+            width: 80%;
+            margin: 5% 0%;
+            height: 45px;
+        }
+
+        section.signup form input{
+            background: #fefefe;
+        }
+
+
+    </style>
+</head>
+<body>
+        <main id="mainView">
+            <section class="signup">
+                <div class="box">
+                    <form action="">
+                        <input type="text" placeholder="username">
+                        <input type="password" placeholder="password">
+                        <input type="submit" value="signup">
+                    </form>
+                </div>
+            </section>
+            <section class="signin">
+                <div class="box">
+                    <form action="">
+                        <input type="text" placeholder="username">
+                        <input type="password" placeholder="password">
+                        <input type="submit" value="log in">
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <script>
+            let mainView = document.getElementById("mainView")
+            let signup = document.querySelectorAll('.signup')[0]
+
+            let widthScreen = window.innerWidth
+            let open = false
+            const signupClose = 450
+            const signupOpen  = 0
+
+
+            window.addEventListener('resize',()=>{
+                let widthScreen = window.innerWidth
+                console.log(widthScreen)
+            })
+
+            if ( widthScreen >= 1366 ){
+
+                signup.addEventListener('click',()=>{
+
+
+                    if (open){
+                        mainView.scrollTo(0,signupClose)
+                        open= false 
+                    }else{
+                        mainView.scrollTo(0,signupOpen)
+                        open= true 
+                    }
+                       
+                   
+                    mainView.style.scrollBehavior = 'smooth'
+                })
+
+            }
+
+        
+            mainView.scrollTo(0,signupClose)
+        
+        </script>
+</body>
+</html>
